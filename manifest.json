@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Azure DevOps ESLint Checker",
+    "version": "1.0",
+    "description": "Analyse le code sur les pages Azure DevOps avec ESLint",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": [
+      "https://*.azure.com/*",
+      "https://*.visualstudio.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://*.azure.com/*",
+          "https://*.visualstudio.com/*"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {}
+  }
